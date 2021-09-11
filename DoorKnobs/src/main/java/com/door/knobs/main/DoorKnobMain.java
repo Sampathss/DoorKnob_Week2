@@ -26,13 +26,14 @@ public class DoorKnobMain {
 		System.out.println(" ************ WELCOME TO DOOR KNOB SHOW ROOM ************ " + "\n");
 		while (flag) {
 			try {
-				doorKnobType = doorKnobTypes.display();
-				doorKnobShape = doorKnobShapes.display();
-				doorKnobColour = doorKnobColours.display();
+				setDoorKnobType(doorKnobTypes.display());
+				setDoorKnobShape(doorKnobShapes.display());
+				setDoorKnobColour(doorKnobColours.display());
 
 				System.out.println("How many number of Door Knobs you require? \n");
-				doorKnobQuantity = scan.nextInt();
-				doorKnobData.add(new DoorKnobData(doorKnobType, doorKnobShape, doorKnobColour, doorKnobQuantity));
+				setDoorKnobQuantity(scan.nextInt());
+				doorKnobData.add(new DoorKnobData(getDoorKnobType(), getDoorKnobShape(), getDoorKnobColour(),
+						getDoorKnobQuantity()));
 
 				System.out.println("Do you need any other type of Door knobs? Please select Y or N: \n");
 				char c = scan.next().charAt(0);
@@ -61,6 +62,38 @@ public class DoorKnobMain {
 		doorKnobOrderAndCreation.create();
 		System.out.println("****************************************************************");
 
+	}
+
+	public static String getDoorKnobType() {
+		return doorKnobType;
+	}
+
+	public static void setDoorKnobType(String doorKnobType) {
+		DoorKnobMain.doorKnobType = doorKnobType;
+	}
+
+	public static String getDoorKnobShape() {
+		return doorKnobShape;
+	}
+
+	public static void setDoorKnobShape(String doorKnobShape) {
+		DoorKnobMain.doorKnobShape = doorKnobShape;
+	}
+
+	public static String getDoorKnobColour() {
+		return doorKnobColour;
+	}
+
+	public static void setDoorKnobColour(String doorKnobColour) {
+		DoorKnobMain.doorKnobColour = doorKnobColour;
+	}
+
+	public static int getDoorKnobQuantity() {
+		return doorKnobQuantity;
+	}
+
+	public static void setDoorKnobQuantity(int doorKnobQuantity) {
+		DoorKnobMain.doorKnobQuantity = doorKnobQuantity;
 	}
 
 }
